@@ -59,23 +59,34 @@ function Counter({title, initValue}:{
   function changeHandler(evt){
     setStep(Number(evt.target.value));
   }
-  return <Container maxWidth="sm">
-    <h1>{title}</h1>
-    <ButtonGroup variant='contained'>
-      <Button onClick={incrementValue}>+</Button> 
-      <Button onClick={decrementValue}>-</Button>
-      <Button onClick={decrementValue}>-</Button>
-    </ButtonGroup>
-    <input type="text" value={step} onChange={changeHandler}></input> 
-    {value}
-  </Container>
+  const style = {
+    border: "5px solid black", 
+    padding: "20px"
+  }
+  return <div style={style}>
+      <h1>{title}</h1>
+      <ButtonGroup variant='contained'>
+        <Button onClick={incrementValue}>+</Button> 
+        <Button onClick={decrementValue}>-</Button>
+        <Button onClick={decrementValue}>-</Button>
+      </ButtonGroup>
+      <input type="text" value={step} onChange={changeHandler}></input> 
+      {value}
+    
+  </div>
 }
 
 function App() {
   return (
-    <>
+    <Container maxWidth="sm">
       <Counter title="카운터" initValue={10}></Counter>
-    </>
+      <Counter title="카운터" initValue={10}></Counter>
+      <Counter title="카운터" initValue={10}></Counter>
+      <Counter title="카운터" initValue={10}></Counter>
+      <Counter title="카운터" initValue={10}></Counter>
+      <Counter title="카운터" initValue={10}></Counter>
+      <Counter title="카운터" initValue={10}></Counter>
+    </Container>
   )
 }
 
