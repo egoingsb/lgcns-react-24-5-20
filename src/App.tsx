@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css'
-import { Button, ButtonGroup } from '@mui/material';
+import { Button, ButtonGroup, Container } from '@mui/material';
 
 function Counter({title, initValue}:{
   title: string;
@@ -59,7 +59,7 @@ function Counter({title, initValue}:{
   function changeHandler(evt){
     setStep(Number(evt.target.value));
   }
-  return <>
+  return <Container maxWidth="sm">
     <h1>{title}</h1>
     <ButtonGroup variant='contained'>
       <Button onClick={incrementValue}>+</Button> 
@@ -68,7 +68,7 @@ function Counter({title, initValue}:{
     </ButtonGroup>
     <input type="text" value={step} onChange={changeHandler}></input> 
     {value}
-  </>
+  </Container>
 }
 
 function App() {
