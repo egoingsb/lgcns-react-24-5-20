@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import { Button, ButtonGroup, Container } from '@mui/material';
-
+import s from './app.module.css';
 function Counter({title, initValue}:{
   title: string;
   initValue: number;
@@ -64,7 +64,7 @@ function Counter({title, initValue}:{
     padding: "20px"
   }
   return <div style={style}>
-      <h1 className="sdoifjpowqefqwoiep">{title}</h1>
+      <h1 className={s.heading1}>{title}</h1>
       <ButtonGroup variant='contained'>
         <Button onClick={incrementValue}>+</Button> 
         <Button onClick={decrementValue}>-</Button>
