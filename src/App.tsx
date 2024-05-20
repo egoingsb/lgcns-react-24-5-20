@@ -4,9 +4,8 @@ type CounterProps = {
   title: string;
   initValue: number;
 }
-function Counter(props:CounterProps){
-  const title = props.title;
-  const initValue = props.initValue;
+
+function Counter({title, initValue}:CounterProps){
   return <>
     <h1>{title}</h1>
     <button>+</button> {initValue}
