@@ -7,7 +7,7 @@ function Counter({title, initValue}:{
 }){
   const [value, setValue] = useState(initValue);
   function handleClick(){
-    setValue(value+1);
+    setValue(value+1); // or setValue(prev=>prev+1);
   }
   return <>
     <h1>{title}</h1>
