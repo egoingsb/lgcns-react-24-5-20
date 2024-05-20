@@ -1,8 +1,10 @@
 import './App.css'
 
-// @ts-expect-error
-function Counter(props){
-  console.log('props', props);
+type CounterProps = {
+  title: string;
+  initValue: string;
+}
+function Counter(props:CounterProps){
   const title = props.title;
   const initValue = props.initValue;
   return <>
@@ -16,6 +18,7 @@ function App() {
     <>
       <Counter title="카운터" initValue="10"></Counter>
       <Counter title="불면증 카운터" initValue="20"></Counter>
+      <Counter title='피로 카운터' initValue='30'></Counter>
     </>
   )
 }
