@@ -6,12 +6,17 @@ function Counter({title, initValue}:{
   initValue: number;
 }){
   const [value, setValue] = useState(initValue);
-  function handleClick(){
+  function incrementValue(){
     setValue(value+1); // or setValue(prev=>prev+1);
+  }
+  function decrementValue(){
+    setValue(value-1);
   }
   return <>
     <h1>{title}</h1>
-    <button onClick={handleClick}>+</button> {value}
+    <button onClick={incrementValue}>+</button> 
+    <button onClick={decrementValue}>-</button> 
+    {value}
   </>
 }
 
