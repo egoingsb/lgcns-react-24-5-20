@@ -6,16 +6,22 @@ function Counter({title, initValue}:{
   initValue: number;
 }){
   const [value, setValue] = useState(initValue);
+  const [step, setStep] = useState(10);
   function incrementValue(){
-    setValue(value+1); // or setValue(prev=>prev+1);
+    setValue(value+step); // or setValue(prev=>prev+1);
   }
   function decrementValue(){
-    setValue(value-1);
+    setValue(value-step);
+  }
+  // @ts-ignore
+  function changeHandler(evt){
+    setStep(Number(evt.target.value));
   }
   return <>
     <h1>{title}</h1>
     <button onClick={incrementValue}>+</button> 
-    <button onClick={decrementValue}>-</button> 
+    <button onClick={decrementValue}>-</button>
+    <input type="text" value={step} onChange={changeHandler}></input> 
     {value}
   </>
 }
