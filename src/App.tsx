@@ -64,7 +64,7 @@ function Counter({title, initValue}:{
     padding: "20px"
   }
   return <div style={style}>
-      <h1>{title}</h1>
+      <h1 className="sdoifjpowqefqwoiep">{title}</h1>
       <ButtonGroup variant='contained'>
         <Button onClick={incrementValue}>+</Button> 
         <Button onClick={decrementValue}>-</Button>
