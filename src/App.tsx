@@ -35,7 +35,19 @@ function Counter({title, initValue}:{
       });
   }
   function decrementValue(){
-    setValue(value-step);
+    const option = {
+      method: 'PUT',
+      body: JSON.stringify({value:value-step}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch('http://localhost:9999/counter',option)
+      .then(type=>type.json())
+      // @ts-ignore
+      .then(result=>{
+        setValue(value-step)
+      });
   }
   // @ts-ignore
   function changeHandler(evt){
