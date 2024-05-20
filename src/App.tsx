@@ -4,7 +4,8 @@ function App() {
 
   return (
     <>
-      hello
+      <h1>Counter</h1>
+      <button>+</button> 0
     </>
   )
 }
