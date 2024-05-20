@@ -1,11 +1,16 @@
 import './App.css'
 
-function App() {
+function Counter(){
+  return <>
+    <h1>카운터</h1>
+    <button>+</button> 0
+  </>
+}
 
+function App() {
   return (
     <>
-      <h1>Counter</h1>
-      <button>+</button> 0
+      <Counter></Counter>
     </>
   )
 }
