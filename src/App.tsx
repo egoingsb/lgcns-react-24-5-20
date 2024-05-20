@@ -5,10 +5,7 @@ function Counter({title, initValue}:{
   title: string;
   initValue: number;
 }){
-  const countState = useState(initValue);
-  const value = countState[0];
-  const setValue = countState[1];
-  console.log('value', value);
+  const [value, setValue] = useState(initValue);
   function handleClick(){
     setValue(value+1);
   }
