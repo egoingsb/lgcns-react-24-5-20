@@ -1,11 +1,9 @@
 import './App.css'
 
-type CounterProps = {
+function Counter({title, initValue}:{
   title: string;
   initValue: number;
-}
-
-function Counter({title, initValue}:CounterProps){
+}){
   return <>
     <h1>{title}</h1>
     <button>+</button> {initValue}
