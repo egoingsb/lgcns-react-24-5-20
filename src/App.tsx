@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css'
+import { Button, ButtonGroup } from '@mui/material';
 
 function Counter({title, initValue}:{
   title: string;
@@ -60,8 +61,11 @@ function Counter({title, initValue}:{
   }
   return <>
     <h1>{title}</h1>
-    <button onClick={incrementValue}>+</button> 
-    <button onClick={decrementValue}>-</button>
+    <ButtonGroup variant='contained'>
+      <Button onClick={incrementValue}>+</Button> 
+      <Button onClick={decrementValue}>-</Button>
+      <Button onClick={decrementValue}>-</Button>
+    </ButtonGroup>
     <input type="text" value={step} onChange={changeHandler}></input> 
     {value}
   </>
