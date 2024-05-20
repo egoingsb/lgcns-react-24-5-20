@@ -19,7 +19,7 @@ function Counter({title, initValue}:{
   
 
 
-  function incrementValue(){
+  async function incrementValue(){
     const option = {
       method: 'PUT',
       body: JSON.stringify({value:value+step}),
@@ -27,12 +27,17 @@ function Counter({title, initValue}:{
         'Content-Type': 'application/json'
       }
     }
-    fetch('http://localhost:9999/counter',option)
-      .then(type=>type.json())
-      // @ts-ignore
-      .then(result=>{
-        setValue(value+step)
-      });
+    // fetch('http://localhost:9999/counter',option)
+    //   .then(type=>{
+    //     return type.json()
+    //   })
+    //   .then(result=>{
+    //     setValue(value+step)
+    //   });
+    const type = await fetch('http://localhost:9999/counter',option);
+    const result = await type.json();
+    setValue(value+step);
+
   }
   function decrementValue(){
     const option = {
