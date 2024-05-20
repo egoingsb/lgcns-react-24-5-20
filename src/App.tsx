@@ -20,7 +20,19 @@ function Counter({title, initValue}:{
 
 
   function incrementValue(){
-    setValue(value+step); // or setValue(prev=>prev+1);
+    const option = {
+      method: 'PUT',
+      body: JSON.stringify({value:value+step}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch('http://localhost:9999/counter',option)
+      .then(type=>type.json())
+      // @ts-ignore
+      .then(result=>{
+        setValue(value+step)
+      });
   }
   function decrementValue(){
     setValue(value-step);
