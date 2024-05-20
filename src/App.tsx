@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 
 function Counter({title, initValue}:{
@@ -7,6 +7,18 @@ function Counter({title, initValue}:{
 }){
   const [value, setValue] = useState(initValue);
   const [step, setStep] = useState(10);
+
+  useEffect(()=>{
+    console.log('loading...')
+    fetch('http://localhost:9999/counter')
+      .then(type=>type.json())
+      .then(result=>{
+        setValue(result.value)
+      });
+  },[])
+  
+
+
   function incrementValue(){
     setValue(value+step); // or setValue(prev=>prev+1);
   }
@@ -30,8 +42,6 @@ function App() {
   return (
     <>
       <Counter title="카운터" initValue={10}></Counter>
-      <Counter title="불면증 카운터" initValue={20}></Counter>
-      <Counter title='피로 카운터' initValue={30}></Counter>
     </>
   )
 }
