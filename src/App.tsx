@@ -1,5 +1,6 @@
 import './App.css'
 
+// @ts-expect-error
 function Counter(props){
   console.log('props', props);
   const title = props.title;
